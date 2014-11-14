@@ -1,64 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
-}
-
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
 .bookImage {
   float: left;
 }
@@ -101,57 +40,452 @@ p {
   vertical-align: bottom;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) { 
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+.km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
+.km-inbox:before, .km-inbox:after { content: "\E0B0"; }
+
+div.center {
+  text-align: center;
+}
+
+p.headline {
+  font-style: italic;
+}
+
+.hero {
+  font-size: 1.2em;
+}
+
+/* Added from Friends App */
+.cf {
+  zoom: 1;
+}
+
+.cf:before,
+.cf:after {
+  content: '';
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.km-flat .km-loader,
+.km-flat .km-rowinsert,
+.km-flat .km-state-active,
+.km-flat .km-scroller-pull,
+.km-flat .k-slider-selection,
+.km-flat .km-touch-scrollbar,
+.km-flat .km-pages .km-current-page,
+.km-flat .k-slider .k-draghandle,
+.km-flat .k-slider .k-draghandle:hover,
+.km-flat .km-tabstrip .km-state-active,
+.km-flat .km-scroller-refresh.km-load-more,
+.km-flat .km-popup .k-state-hover,
+.km-flat .km-popup .k-state-focused,
+.km-flat .km-popup .k-state-selected,
+.km-flat .km-actionsheet > li > a:active,
+.km-flat .km-actionsheet > li > a:hover,
+.km-flat li.km-state-active .km-listview-link,
+.km-flat li.km-state-active .km-listview-label,
+.km-flat .km-listview-label input[type=radio]:checked,
+.km-flat .km-listview-label input[type=checkbox]:checked {
+    background: #3598db;
+}
+
+.km-flat,
+.km-flat .km-navbar,
+.km-flat .km-content {
+    border: 0 none;
+    color: #0073CF;
+    font-family: "Open Sans", sans-serif;
+    background-color: rgba(5, 34, 144, 0.04);
+}
+
+.km-view-title {
+  color: #fff;
+}
+
+.center-block {
+    display: block;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hide-text {
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.disabled {
+  position: relative;
+  display: block;
+}
+
+.disabled:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  left: -1px;
+  z-index: 1;
+}
+
+/* Forms */
+
+::-webkit-input-placeholder {
+    color: #b6c5c6;
+}
+
+:-moz-placeholder {
+    color: #b6c5c6;
+}
+
+::-moz-placeholder {
+    color: #b6c5c6;
+}
+
+:-ms-input-placeholder {  
+    color: #b6c5c6;
+}
+
+.km-flat form .km-list > li {
+    padding: .7em .7em .5em;
+    border-color: #eaeced;
+}
+
+.km-flat form .km-listinset > li:first-child,
+.km-flat form .km-listgroupinset .km-list > li:first-child {
+    border-width: 0 0 1px;
+    border-color: #eaeced;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+}
+
+.km-flat form .km-listinset > li:last-child,
+.km-flat form .km-listgroupinset .km-list > li:last-child {
+    border: 0 none;
+    -webkit-border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.km-flat .km-list input[type="text"]:not(.k-input),
+.km-flat .km-list input[type="password"],
+.km-flat .km-list input[type="email"],
+.km-flat .km-list input[type="date"],
+.km-flat textarea,
+.km-flat select {
+    position: static;
+    width: 100%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.km-flat select {
+    padding: .4em .2em;
+}
+
+/* Buttons */
+
+.btn {
+    position: relative;
+    margin: 0 -1px;
+    padding: .6em 0;
+    border: 0 none;
+    font-size: 1.2rem;
+    background-color: #3598db;
+}
+
+.disabled .btn {
+    opacity: .35;
+}
+
+.btn-login,
+.signup-view .btn-signup {
+    background-color: #1bbc9b;
+}
+
+.signup-view .btn-signup,
+.btn-delete {
+    display: block;
+    text-align: center;
+}
+
+.btn-delete {
+    background-color: #e84c3d;
+}
+
+.oauth-item .btn {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+#roadmapApp .btn-login-fb {
+  background-image: url(images/icon-facebook.png);
+}
+
+#roadmapApp .btn-login-google {
+  background-image: url(images/icon-google.png);
+}
+
+.km-header .nav-button {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    background-color: transparent;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+}
+
+.km-header .nav-button-back {
+    background-image: url(images/icon-arrow_left.png);
+    background-position: .65em 50%;
+}
+
+.km-header .nav-button-add {
+    background-image: url(images/icon-add.png);
+}
+
+.km-header .nav-button-cancel,
+.km-header .nav-button-post {
+    width: auto;
+    height: 2.5em;
+    font-size: .85rem;
+    line-height: 2.5em;
+}
+
+/* App Header */
+
+.km-flat.km-on-ios.km-black-translucent-status-bar .km-header {
+    min-height: 20px;
+    background-color: #0073CF;
+}
+
+.km-flat .km-header .km-navbar {
+    min-height: 3.15em;
+}
+
+.km-flat.km-on-ios.km-black-translucent-status-bar .km-header .km-navbar {
+    min-height: 4.5em;
+}
+
+.km-flat .km-header .km-view-title {
+    margin-top: .4em;
+    font-size: 1rem;
+}
+
+.km-flat.km-on-ios.km-black-translucent-status-bar .km-header .km-view-title {
+  margin-top: .4em;
+}
+
+/* App Footer */
+
+.welcome-scrn .km-footer {
+    color: #fff;
+    text-align: center;
+    background-color: #0073CF;
+}
+
+.welcome-scrn .km-footer p {
+    font-size: .75rem;
+    position: relative;
+}
+
+/* Welcome screen */
+
+.app-logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+    height: 32px;
+    background: transparent url(images/aha-logo.png) no-repeat 0 0;
+}
+
+.app-name {
+    margin-bottom: 1.5em;
+}
+
+.app-name small {
+    display: block;
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+#login-form .username,
+#login-form .password {
+    position: relative;
+}
+
+#login-form .username:before,
+#login-form .password:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: .75em;
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-top: -.5em;
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+#login-form .username:before {
+    background-image: url(images/icon-username.png);
+}
+
+#login-form .password:before {
+    background-image: url(images/icon-password.png);
+}
+
+#ahaAuth .group-wrp {
+  margin: -1em 1em 0;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+#ahaAuth .group-wrp li {
+  margin: 1.5em .5em 0;
+}
+
+.welcome-scrn .group-wrp {
+    margin: -1em 1em 0;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+.welcome-scrn .group-wrp li {
+  margin: 1.5em 0 0;
+}
+
+.welcome-scrn .group-wrp .btn {
+    display: block;
+}
+
+.welcome-scrn .group-wrp .oauth {
+    margin-top: .5em;
+    margin-right: -1%;
+    margin-left: -1%;
+}
+
+.welcome-scrn .group-wrp .oauth .oauth-item {
+    float: left;
+    width: 48%;
+    margin: 0 1%;
+}
+
+.welcome-scrn .group-wrp .oauth .btn {
+    height: 45px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.welcome-scrn .group-wrp .oauth .btn span,
+.welcome-scrn .group-wrp .btn-signup span {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.welcome-scrn .group-wrp .btn-signup {
+    border: 0 none;
+    background-color: transparent;
+}
+
+/* Signup */
+
+.signup-view .select-wrp {
+    -webkit-border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.km-flat .signup-view .km-listinset > li:last-child {
+    margin: .5em 0 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.txtarea-wrp textarea {
+    float: none;
+    height: 5.5em;
+    resize: none;
+}
+
+.signup-view .signup-btn-wrp {
+    margin: 0 1em;
+}
+
+.signup-view .select-wrp select {
+    color: #b6c5c6;
+}
+
+.signup-view .select-wrp option:first-child {
+    color: #b6c5c6;
+}
+
+/* Retina Images */
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 144dpi) { 
+    
+    .app-logo {
+        background-image: url(images/aha-logo@2x.png);
+        background-size: 80px 32px;
+    }
+    
+    .username:before {
+        background-image: url(images/icon-username@2x.png);
+        background-size: 12px 13px;
+    }
+
+    .password:before {
+        background-image: url(images/icon-password@2x.png);
+        background-size: 10px 12px;
+    }
+    
+    .btn-login-fb {
+        background-image: url(images/icon-facebook@2x.png);
+        background-size: 11px 18px;
+    }
+    
+    .btn-login-google {
+        background-image: url(images/icon-google@2x.png);
+        background-size: 20px 20px;
+    }
+    
+    .btn-login-liveid {
+        background-image: url(images/icon-liveid@2x.png);
+        background-size: 22px 20px;
+    }
+
+    .btn-login-adsf {
+        background-image: url(images/icon-adsf@2x.png);
+        background-size: 21px 20px;
+    }
+    
+    .km-header .nav-button-back {
+        background-image: url(images/icon-arrow_left@2x.png);
+        background-size: 9px 20px;
+    }
+
+    .km-header .nav-button-add {
+        background-image: url(images/icon-add@2x.png);
+        background-size: 23px 23px;
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}

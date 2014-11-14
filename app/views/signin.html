@@ -1,0 +1,21 @@
+<div class="view-content welcome-scrn form-view" data-role="view" data-title="Sign-in" data-layout="main" data-model="app.models.signin" id="signin" data-init="app.models.signin.init" data-show="app.models.signin.show">
+	<header data-role="header"></header>
+  <h2 class="app-name center-text">Great Books Sample</small></h2>
+  <form id="login-form">
+      <ul data-role="listview" data-style="inset">
+          <li class="username">
+             <input type="text" id="loginUsername" placeholder="Username" required validationMessage="Username is required!" />
+          </li>
+          <li class="password">
+            <input type="password" id="loginPassword" placeholder="Password" required validationMessage="Password is required!" />
+          </li>
+      </ul>
+  </form>
+  <ol class="group-wrp">
+      <li>
+          <span id="login" data-role="touch" data-bind="events: { tap: login }">
+              <a data-role="button" class="btn btn-login">Login</a>
+          </span>
+      </li>
+  </ol>
+</div>
