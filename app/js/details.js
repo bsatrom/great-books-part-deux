@@ -23,6 +23,8 @@
         if (currentBook.is_favorite) {
           $('#favorite').data('kendoMobileSwitch').toggle();
         }
+        
+        analytics.TrackFeature('Books.ShowAll');
       },
       hide: function() {
           // When the user navigates away from the page, remove the filter

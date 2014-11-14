@@ -22,6 +22,7 @@
       // Authenticate using the username and password
       app.everlive.Users.login(username, password)
         .then(function () {
+          analytics.TrackFeature('Login');
           app.mobileApp.navigate('views/favorites.html');
         })
         .then(null,
