@@ -1,3 +1,18 @@
-<div data-role="view" data-title="Book Details" data-layout="back-layout" data-reload="true">
-  
+<div data-role="view" data-title="Book Details" 
+   data-show="BookDetail.show"
+   data-hide="BookDetail.hide"
+   data-layout="back-layout" data-reload="true">
+  <div id="bookContent">
+    <div class="title" data-bind="text: title"></div>
+    <div class="bigImage">
+        <img data-bind="attr: { src: image_url }" />
+    </div>
+    <div>
+        <label for="favorite">Favorite?</label>
+        <input id="favorite" type="checkbox" data-role="switch" data-checked=false />
+    </div>
+    <div>
+        <p><a data-role="button" id="amazonLink" data-click="BookDetail.openLink">Order from Amazon</a></p>
+    </div>
+  </div>
 </div>
