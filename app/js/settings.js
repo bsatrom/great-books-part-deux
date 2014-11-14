@@ -4,7 +4,7 @@ window.app = window.app || {};
   var appSettings = {
 
       everlive: {
-          apiKey: '8tvzSOnNUmFUnYnj', //KEY HERE
+          apiKey: '9UEvci6JN37RuvLu', //KEY HERE
           scheme: 'http'
       },
 

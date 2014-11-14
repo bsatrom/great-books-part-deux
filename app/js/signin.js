@@ -18,6 +18,16 @@
     var login = function () {
       var username = $loginUsername.val();
       var password = $loginPassword.val();
+      
+      // Authenticate using the username and password
+      app.everlive.Users.login(username, password)
+        .then(function () {
+          app.mobileApp.navigate('views/favorites.html');
+        })
+        .then(null,
+          function (err) {
+              window.alert(err.message);
+        });
     };
 
     window.app = window.app || {};

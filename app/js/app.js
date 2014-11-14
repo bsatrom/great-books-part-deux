@@ -1,5 +1,11 @@
 (function () {
-    var app;
+    var app = {
+      // Initialize Everlive SDK
+      everlive: new Everlive({
+          apiKey: window.app.settings.everlive.apiKey,
+          scheme: window.app.settings.everlive.scheme
+      })
+    };
 
     window.Books = {
         data: new kendo.data.DataSource({
@@ -24,7 +30,7 @@
     document.addEventListener("deviceready", function () {  
         navigator.splashscreen.hide();
 
-        app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
+        app.mobileApp = new kendo.mobile.Application(document.body, { layout: "main-layout" });
     }, false);
 
     window.app = app;
