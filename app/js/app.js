@@ -1,10 +1,10 @@
 (function () {
     var app = {
       // Initialize Everlive SDK
-      everlive: new Everlive({
+      /*everlive: new Everlive({
           apiKey: window.app.settings.everlive.apiKey,
           scheme: window.app.settings.everlive.scheme
-      })
+      })*/
     };
   
     window.Books = {
