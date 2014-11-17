@@ -24,7 +24,7 @@
           $('#favorite').data('kendoMobileSwitch').toggle();
         }
         
-        analytics.TrackFeature('Books.ShowAll');
+        //analytics.TrackFeature('Books.ShowAll');
       },
       hide: function() {
           // When the user navigates away from the page, remove the filter

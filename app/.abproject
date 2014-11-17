@@ -10,8 +10,6 @@
   "FrameworkVersion": "3.2.0",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "CorePlugins": [
-    "com.telerik.feedback",
-    "com.telerik.plugin.eqatecanalytics",
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
     "org.apache.cordova.console",
@@ -76,5 +74,9 @@
   "ProjectGuid": "{826db2dd-35a0-4e2c-8819-35b7dc234de3}",
   "WP8ProductID": "{131ec0d8-eff7-4d9e-ab15-f8ac2686ee6f}",
   "WP8PublisherID": "{4f992a94-1d15-41d5-9a53-7bac94cab5ba}",
-  "CordovaPluginVariables": {}
+  "CordovaPluginVariables": {
+    "com.telerik.Cordova-MobileTestingExtension": {
+      "IOS_APP_URL": "greatBooks"
+    }
+  }
 }
